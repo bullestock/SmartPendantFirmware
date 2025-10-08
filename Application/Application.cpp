@@ -415,7 +415,7 @@ Result Application::ProcessButtonCallback(Application* obj_ptr, void* ptr)
     else if(btn.btn == InputDrv::BTN_RIGHT) ui_btn = &ths.right_btn;
     else; // Do nothing - MISRA rule
 
-    // If button object found, It on display and it active
+    // If button object found: is it shown and active?
     if((ui_btn != nullptr) && ui_btn->IsShow() && ui_btn->IsActive())
     {
       // Reflect button state on the screen

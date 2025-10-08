@@ -190,7 +190,7 @@ class InputDrv : public AppTask
 
   private:
     // How many cycles button must change state before state will be changed in
-    // result returned by GetButtonState() function. For reduce debouncing
+    // result returned by GetButtonState() function. For debouncing
     const static uint32_t BUTTON_READ_DELAY = 8u;
 
     // Handle to timer used for process encoders input
@@ -209,7 +209,7 @@ class InputDrv : public AppTask
     // Last button states for GetButtonState() function. Can be called only from one place!
     bool buttons_last_state[BTN_MAX] = {0};
 
-    // Last value for reduce overhead in user task
+    // Last value for reducing overhead in user task
     int32_t last_enc_value = 0;
     uint32_t last_enc_ms = 0u;
     uint32_t enc_speed = 0u;
@@ -222,12 +222,12 @@ class InputDrv : public AppTask
       GPIO_TypeDef* button_port;// Button port
       uint16_t button_pin;      // Button pin
       GPIO_PinState pin_state;  // High/low on input treated as pressed
-      uint8_t btn_state_cnt;    // Counter for reduce debouncing
+      uint8_t btn_state_cnt;    // Counter for debouncing
       bool btn_state;           // Button state returned by GetButtonState() function
-      bool btn_state_tmp;       // Temporary button state for reduce debouncing
+      bool btn_state_tmp;       // Temporary button state for debouncing
     } ButtonProfile;
 
-    // ***   Structures array for describe buttons inputs  *********************
+    // ***   Structures array for describing button inputs  *********************
     ButtonProfile buttons[BTN_MAX] =
     {
       {BTN_LEFT_GPIO_Port,  BTN_LEFT_Pin,  GPIO_PIN_RESET, 0, false, false},
