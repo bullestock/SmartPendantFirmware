@@ -86,6 +86,11 @@ extern "C" void AppMain(void)
   DetectCrystalValue();
   // Check top edge button state and if it pressed - jump to internal bootloader
   if(btn_usr.IsLow()) Bootloader();
+  // Since we started with 16MHz HSI to have it enabled in case we need to
+  // calibrate HSI before entering into bootloader, we need to configure the main
+  // PLL back to source HSE source and set PLLM divider 25 for 25 MHz crystal
+  // oscillator.
+  ConfigurePll(RCC_PLLSOURCE_HSE, 25u);
 
   // Init NVM
   NVM::GetInstance().Init(eep);
