@@ -71,16 +71,27 @@ void Error_Handler(void);
 #define LCD_CS_GPIO_Port GPIOA
 #define LCD_DC_Pin GPIO_PIN_0
 #define LCD_DC_GPIO_Port GPIOB
-#define BTN_LD_Pin GPIO_PIN_1
-#define BTN_LD_GPIO_Port GPIOB
 #define BLE_RST_Pin GPIO_PIN_2
 #define BLE_RST_GPIO_Port GPIOB
+#ifdef SWAP_BUTTONS
+#define BTN_RD_Pin GPIO_PIN_1
+#define BTN_RD_GPIO_Port GPIOB
+#define BTN_RU_Pin GPIO_PIN_10
+#define BTN_RU_GPIO_Port GPIOB
+#define BTN_LU_Pin GPIO_PIN_12
+#define BTN_LU_GPIO_Port GPIOB
+#define BTN_LD_Pin GPIO_PIN_13
+#define BTN_LD_GPIO_Port GPIOB
+#else
+#define BTN_LD_Pin GPIO_PIN_1
+#define BTN_LD_GPIO_Port GPIOB
 #define BTN_LU_Pin GPIO_PIN_10
 #define BTN_LU_GPIO_Port GPIOB
 #define BTN_RU_Pin GPIO_PIN_12
 #define BTN_RU_GPIO_Port GPIOB
 #define BTN_RD_Pin GPIO_PIN_13
 #define BTN_RD_GPIO_Port GPIOB
+#endif
 #define SDIO_CD_Pin GPIO_PIN_14
 #define SDIO_CD_GPIO_Port GPIOB
 #define BUZZER_Pin GPIO_PIN_8

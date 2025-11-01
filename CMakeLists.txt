@@ -43,8 +43,12 @@ target_include_directories(
 target_link_libraries(
   SmartPendant
   PRIVATE --specs=nano.specs -Wl,--gc-sections,-Map=${PROJECT_NAME}.map
-          -T${CMAKE_CURRENT_SOURCE_DIR}/STM32F411CEUX_FLASH.ld)
+  -T${CMAKE_CURRENT_SOURCE_DIR}/STM32F411CEUX_FLASH.ld
+)
 
+target_compile_definitions(SmartPendant
+  PRIVATE SWAP_BUTTONS=1)
+        
 add_custom_command(
   TARGET SmartPendant
   POST_BUILD
