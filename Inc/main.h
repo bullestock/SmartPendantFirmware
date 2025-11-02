@@ -61,10 +61,6 @@ void Error_Handler(void);
 #define MPG_EN_GPIO_Port GPIOC
 #define BTN_USR_Pin GPIO_PIN_0
 #define BTN_USR_GPIO_Port GPIOA
-#define BTN_LEFT_Pin GPIO_PIN_1
-#define BTN_LEFT_GPIO_Port GPIOA
-#define BTN_RIGHT_Pin GPIO_PIN_2
-#define BTN_RIGHT_GPIO_Port GPIOA
 #define LCD_RST_Pin GPIO_PIN_3
 #define LCD_RST_GPIO_Port GPIOA
 #define LCD_CS_Pin GPIO_PIN_4
@@ -74,6 +70,10 @@ void Error_Handler(void);
 #define BLE_RST_Pin GPIO_PIN_2
 #define BLE_RST_GPIO_Port GPIOB
 #ifdef SWAP_BUTTONS
+#define BTN_RIGHT_Pin GPIO_PIN_1
+#define BTN_RIGHT_GPIO_Port GPIOA
+#define BTN_LEFT_Pin GPIO_PIN_2
+#define BTN_LEFT_GPIO_Port GPIOA
 #define BTN_RD_Pin GPIO_PIN_1
 #define BTN_RD_GPIO_Port GPIOB
 #define BTN_RU_Pin GPIO_PIN_10
@@ -83,6 +83,10 @@ void Error_Handler(void);
 #define BTN_LD_Pin GPIO_PIN_13
 #define BTN_LD_GPIO_Port GPIOB
 #else
+#define BTN_LEFT_Pin GPIO_PIN_1
+#define BTN_LEFT_GPIO_Port GPIOA
+#define BTN_RIGHT_Pin GPIO_PIN_2
+#define BTN_RIGHT_GPIO_Port GPIOA
 #define BTN_LD_Pin GPIO_PIN_1
 #define BTN_LD_GPIO_Port GPIOB
 #define BTN_LU_Pin GPIO_PIN_10
