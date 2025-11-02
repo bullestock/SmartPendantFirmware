@@ -1,8 +1,9 @@
 # SmartPendant
 
-Project of SmartPendant for grblHAL
+Firmware for the SmartPendant project.
 
-![Image](https://github.com/Devtronic-US/SmartPendant/raw/main/Media/Devtronic_SmartPendant_Case.png "Devtronic SmartPendant Case")
+This fork, which is aligned with https://github.com/bullestock/SmartPendantHardware#,
+builds upon the original Devtronic/Nicolai Shlapunov project, which has a store here: https://devtronic.square.site/
 
 ## Software
 
