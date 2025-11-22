@@ -79,7 +79,8 @@ Result DirectControlScr::Setup(int32_t y, int32_t height)
     scale_btn[i].SetSpacing(3u);
   }
 
-  // Set corresponded button pressed
+  // Set most coarse scale button to pressed
+  NVM& nvm = NVM::GetInstance();
   scale_btn[nvm.GetFastJogging() ? 3u : 2u].SetPressed(true);
   // Set scale 0.01 mm
   scale = grbl_comm.IsMetric() ? scale_val_metric[2u] : scale_val_imperial[2u];
